@@ -1,7 +1,7 @@
 <?php
-  require_once 'connection.php';
-  require_once 'taskFunctions.php';
-  require_once 'authFunctions.php';
+  require_once 'config.php';
+  require_once './model/taskFunctions.php';
+  require_once './model/authFunctions.php';
 
   $tasksByUserId = getTasksByUserId();
   $tasksByAssigned = getTasksByAssigned();

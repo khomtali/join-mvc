@@ -1,5 +1,5 @@
 <?php
-  require_once 'authFunctions.php';
+  require_once './model/authFunctions.php';
 
   $errors = [];
   if(!empty($_POST['login']) && !empty($_POST['password'])) {

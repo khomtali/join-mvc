@@ -1,5 +1,6 @@
 <?php
-  require_once 'config.php';
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/config.php';
+
   session_start();
 
   function getUsers()
@@ -63,6 +64,6 @@
   function logOut()
   {
     session_destroy();
-    header('Location: ./authorization.php');
+    header('Location: /var/www/user_data/ngubanova/me/join-mvc/view/authorization.php');
   }
 ?>

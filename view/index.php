@@ -1,35 +1,8 @@
 <?php
-  require_once 'config.php';
-  require_once './model/taskFunctions.php';
-  require_once './model/authFunctions.php';
-
-  $tasksByUserId = getTasksByUserId();
-  $tasksByAssigned = getTasksByAssigned();
-  $assignedUserList = getUsers();
-  $taskNumber = countTasks();
-  $messages = [];
-
-  if(!isAuthorized()) {
-    header('Location: ./authorization.php');
-    die;
-  }
-  if(!empty($_POST['deletedTask'])) {
-    deleteTask();
-    header('Location: ./index.php');
-  }
-  if(!empty($_POST['changedTask'])) {
-    changeStatus();
-    header('Location: ./index.php');
-  }
-  if(!empty($_POST['addTask'])) {
-    addTask();
-    header('Location: ./index.php');
-    $messages[] = 'The task was added!';
-  }
-  if(!empty($_POST['newAssigned'])) {
-    changeAssigned($_POST['newAssigned']);
-    header('Location: ./index.php');
-  }
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/model/taskFunctions.php';
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/model/authFunctions.php';
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/controller/taskController.php';
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/controller/userController.php';
 ?>
 
 <html lang="en">
@@ -157,7 +130,7 @@
         <?php endif; ?>
     </div>
     <ul>
-        <li><a href='./logout.php'>Sign out</a></li>
+        <li><a href='/var/www/user_data/ngubanova/me/join-mvc/model/logout.php'>Sign out</a></li>
     </ul>
 </body>
 </html>

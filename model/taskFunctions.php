@@ -1,5 +1,5 @@
 <?php
-  require_once 'config.php';
+  require_once '/var/www/user_data/ngubanova/me/join-mvc/config.php';
 
   function addTask()
   {
